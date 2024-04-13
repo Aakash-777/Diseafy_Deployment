@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/1a301f8488.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="style.css">
+    <script src="selected_box.js"></script>
+    <script src="search.js"></script> -->
+
+    <link rel="icon" href="{{ url_for('static', filename='icon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='selected_box.js') }}"></script>
+    <script src="{{ url_for('static', filename='search.js') }}"></script>
+
+
+    <title>Document</title>
+</head>
+<body>
+<div id="preloader"></div>
+<div id="particles-js">
+    <section class="white-box">
+        <form action="/login" class="search" id="predform" method="post">
+            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+            <input type="text" name="" id="search-bar" placeholder="Search symptoms" onkeyup="search()">
+        </form>
+        <ul id="symp-list">
+
+            <li class="symptoms" id="0" value="0" ><h2>itching</h2></li>
+            <li class="symptoms" id="1" value="1" ><h2>skin rash</h2></li>
+            <li class="symptoms" id="2" value="2" ><h2>nodal skin eruptions</h2></li>
+            <li class="symptoms" id="3" value="3" ><h2>continuous sneezing</h2></li>
+            <li class="symptoms" id="4" value="4" ><h2>shivering</h2></li>
+            <li class="symptoms" id="5" value="5" ><h2>chills</h2></li>
+            <li class="symptoms" id="6" value="6" ><h2>joint pain</h2></li>
+            <li class="symptoms" id="7" value="7" ><h2>stomach pain</h2></li>
+            <li class="symptoms" id="8" value="8" ><h2>acidity</h2></li>
+            <li class="symptoms" id="9" value="9" ><h2>ulcers on tongue</h2></li>
+            <li class="symptoms" id="10" value="10" ><h2>muscle wasting</h2></li>
+            <li class="symptoms" id="11" value="11" ><h2>vomiting</h2></li>
+            <li class="symptoms" id="12" value="12" ><h2>burning micturition</h2></li>
+            <li class="symptoms" id="13" value="13" ><h2>spotting  urination</h2></li>
+            <li class="symptoms" id="14" value="14" ><h2>fatigue</h2></li>
+            <li class="symptoms" id="15" value="15" ><h2>weight gain</h2></li>
+            <li class="symptoms" id="16" value="16" ><h2>anxiety</h2></li>
+            <li class="symptoms" id="17" value="17" ><h2>cold hands and feets</h2></li>
+            <li class="symptoms" id="18" value="18" ><h2>mood swings</h2></li>
+            <li class="symptoms" id="19" value="19" ><h2>weight loss</h2></li>
+            <li class="symptoms" id="20" value="20" ><h2>restlessness</h2></li>
+            <li class="symptoms" id="21" value="21" ><h2>lethargy</h2></li>
+            <li class="symptoms" id="22" value="22" ><h2>patches in throat</h2></li>
+            <li class="symptoms" id="23" value="23" ><h2>irregular sugar level</h2></li>
+            <li class="symptoms" id="24" value="24" ><h2>cough</h2></li>
+            <li class="symptoms" id="25" value="25" ><h2>high fever</h2></li>
+            <li class="symptoms" id="26" value="26" ><h2>sunken eyes</h2></li>
+            <li class="symptoms" id="27" value="27" ><h2>breathlessness</h2></li>
+            <li class="symptoms" id="28" value="28" ><h2>sweating</h2></li>
+            <li class="symptoms" id="29" value="29" ><h2>dehydration</h2></li>
+            <li class="symptoms" id="30" value="30" ><h2>indigestion</h2></li>
+            <li class="symptoms" id="31" value="31" ><h2>headache</h2></li>
+            <li class="symptoms" id="32" value="32" ><h2>yellowish skin</h2></li>
+            <li class="symptoms" id="33" value="33" ><h2>dark urine</h2></li>
+            <li class="symptoms" id="34" value="34" ><h2>nausea</h2></li>
+            <li class="symptoms" id="35" value="35" ><h2>loss of appetite</h2></li>
+            <li class="symptoms" id="36" value="36" ><h2>pain behind the eyes</h2></li>
+            <li class="symptoms" id="37" value="37" ><h2>back pain</h2></li>
+            <li class="symptoms" id="38" value="38" ><h2>constipation</h2></li>
+            <li class="symptoms" id="39" value="39" ><h2>abdominal pain</h2></li>
+            <li class="symptoms" id="40" value="40" ><h2>diarrhoea</h2></li>
+            <li class="symptoms" id="41" value="41" ><h2>mild fever</h2></li>
+            <li class="symptoms" id="42" value="42" ><h2>yellow urine</h2></li>
+            <li class="symptoms" id="43" value="43" ><h2>yellowing of eyes</h2></li>
+            <li class="symptoms" id="44" value="44" ><h2>acute liver failure</h2></li>
+            <li class="symptoms" id="45" value="45" ><h2>fluid overload</h2></li>
+            <li class="symptoms" id="46" value="46" ><h2>swelling of stomach</h2></li>
+            <li class="symptoms" id="47" value="47" ><h2>swelled lymph nodes</h2></li>
+            <li class="symptoms" id="48" value="48" ><h2>malaise</h2></li>
+            <li class="symptoms" id="49" value="49" ><h2>blurred and distorted vision</h2></li>
+            <li class="symptoms" id="50" value="50" ><h2>phlegm</h2></li>
+            <li class="symptoms" id="51" value="51" ><h2>throat irritation</h2></li>
+            <li class="symptoms" id="52" value="52" ><h2>redness of eyes</h2></li>
+            <li class="symptoms" id="53" value="53" ><h2>sinus pressure</h2></li>
+            <li class="symptoms" id="54" value="54" ><h2>runny nose</h2></li>
+            <li class="symptoms" id="55" value="55" ><h2>congestion</h2></li>
+            <li class="symptoms" id="56" value="56" ><h2>chest pain</h2></li>
+            <li class="symptoms" id="57" value="57" ><h2>weakness in limbs</h2></li>
+            <li class="symptoms" id="58" value="58" ><h2>fast heart rate</h2></li>
+            <li class="symptoms" id="59" value="59" ><h2>pain during bowel movements</h2></li>
+            <li class="symptoms" id="60" value="60" ><h2>pain in anal region</h2></li>
+            <li class="symptoms" id="61" value="61" ><h2>bloody stool</h2></li>
+            <li class="symptoms" id="62" value="62" ><h2>irritation in anus</h2></li>
+            <li class="symptoms" id="63" value="63" ><h2>neck pain</h2></li>
+            <li class="symptoms" id="64" value="64" ><h2>dizziness</h2></li>
+            <li class="symptoms" id="65" value="65" ><h2>cramps</h2></li>
+            <li class="symptoms" id="66" value="66" ><h2>bruising</h2></li>
+            <li class="symptoms" id="67" value="67" ><h2>obesity</h2></li>
+            <li class="symptoms" id="68" value="68" ><h2>swollen legs</h2></li>
+            <li class="symptoms" id="69" value="69" ><h2>swollen blood vessels</h2></li>
+            <li class="symptoms" id="70" value="70" ><h2>puffy face and eyes</h2></li>
+            <li class="symptoms" id="71" value="71" ><h2>enlarged thyroid</h2></li>
+            <li class="symptoms" id="72" value="72" ><h2>brittle nails</h2></li>
+            <li class="symptoms" id="73" value="73" ><h2>swollen extremeties</h2></li>
+            <li class="symptoms" id="74" value="74" ><h2>excessive hunger</h2></li>
+            <li class="symptoms" id="75" value="75" ><h2>extra marital contacts</h2></li>
+            <li class="symptoms" id="76" value="76" ><h2>drying and tingling lips</h2></li>
+            <li class="symptoms" id="77" value="77" ><h2>slurred speech</h2></li>
+            <li class="symptoms" id="78" value="78" ><h2>knee pain</h2></li>
+            <li class="symptoms" id="79" value="79" ><h2>hip joint pain</h2></li>
+            <li class="symptoms" id="80" value="80" ><h2>muscle weakness</h2></li>
+            <li class="symptoms" id="81" value="81" ><h2>stiff neck</h2></li>
+            <li class="symptoms" id="82" value="82" ><h2>swelling joints</h2></li>
+            <li class="symptoms" id="83" value="83" ><h2>movement stiffness</h2></li>
+            <li class="symptoms" id="84" value="84" ><h2>spinning movements</h2></li>
+            <li class="symptoms" id="85" value="85" ><h2>loss of balance</h2></li>
+            <li class="symptoms" id="86" value="86" ><h2>unsteadiness</h2></li>
+            <li class="symptoms" id="87" value="87" ><h2>weakness of one body side</h2></li>
+            <li class="symptoms" id="88" value="88" ><h2>loss of smell</h2></li>
+            <li class="symptoms" id="89" value="89" ><h2>bladder discomfort</h2></li>
+            <li class="symptoms" id="90" value="90" ><h2>foul smell of urine</h2></li>
+            <li class="symptoms" id="91" value="91" ><h2>continuous feel of urine</h2></li>
+            <li class="symptoms" id="92" value="92" ><h2>passage of gases</h2></li>
+            <li class="symptoms" id="93" value="93" ><h2>internal itching</h2></li>
+            <li class="symptoms" id="94" value="94" ><h2>toxic look (typhos)</h2></li>
+            <li class="symptoms" id="95" value="95" ><h2>depression</h2></li>
+            <li class="symptoms" id="96" value="96" ><h2>irritability</h2></li>
+            <li class="symptoms" id="97" value="97" ><h2>muscle pain</h2></li>
+            <li class="symptoms" id="98" value="98" ><h2>altered sensorium</h2></li>
+            <li class="symptoms" id="99" value="99" ><h2>red spots over body</h2></li>
+            <li class="symptoms" id="100" value="100" ><h2>belly pain</h2></li>
+            <li class="symptoms" id="101" value="101" ><h2>abnormal menstruation</h2></li>
+            <li class="symptoms" id="102" value="102" ><h2>dischromic  patches</h2></li>
+            <li class="symptoms" id="103" value="103" ><h2>watering from eyes</h2></li>
+            <li class="symptoms" id="104" value="104" ><h2>increased appetite</h2></li>
+            <li class="symptoms" id="105" value="105" ><h2>polyuria</h2></li>
+            <li class="symptoms" id="106" value="106" ><h2>family history</h2></li>
+            <li class="symptoms" id="107" value="107" ><h2>mucoid sputum</h2></li>
+            <li class="symptoms" id="108" value="108" ><h2>rusty sputum</h2></li>
+            <li class="symptoms" id="109" value="109" ><h2>lack of concentration</h2></li>
+            <li class="symptoms" id="110" value="110" ><h2>visual disturbances</h2></li>
+            <li class="symptoms" id="111" value="111" ><h2>receiving blood transfusion</h2></li>
+            <li class="symptoms" id="112" value="112" ><h2>receiving unsterile injections</h2></li>
+            <li class="symptoms" id="113" value="113" ><h2>coma</h2></li>
+            <li class="symptoms" id="114" value="114" ><h2>stomach bleeding</h2></li>
+            <li class="symptoms" id="115" value="115" ><h2>distention of abdomen</h2></li>
+            <li class="symptoms" id="116" value="116" ><h2>history of alcohol consumption</h2></li>
+            <li class="symptoms" id="117" value="117" ><h2>fluid overload.1</h2></li>
+            <li class="symptoms" id="118" value="118" ><h2>blood in sputum</h2></li>
+            <li class="symptoms" id="119" value="119" ><h2>prominent veins on calf</h2></li>
+            <li class="symptoms" id="120" value="120" ><h2>palpitations</h2></li>
+            <li class="symptoms" id="121" value="121" ><h2>painful walking</h2></li>
+            <li class="symptoms" id="122" value="122" ><h2>pus filled pimples</h2></li>
+            <li class="symptoms" id="123" value="123" ><h2>blackheads</h2></li>
+            <li class="symptoms" id="124" value="124" ><h2>scurring</h2></li>
+            <li class="symptoms" id="125" value="125" ><h2>skin peeling</h2></li>
+            <li class="symptoms" id="126" value="126" ><h2>silver like dusting</h2></li>
+            <li class="symptoms" id="127" value="127" ><h2>small dents in nails</h2></li>
+            <li class="symptoms" id="128" value="128" ><h2>inflammatory nails</h2></li>
+            <li class="symptoms" id="129" value="129" ><h2>blister</h2></li>
+            <li class="symptoms" id="130" value="130" ><h2>red sore around nose</h2></li>
+            <li class="symptoms" id="131" value="131" ><h2>yellow crust ooze</h2></li>
+            <li class="symptoms" id="132" value="132" ><h2>prognosis</h2></li>
+
+        </ul>
+    </section>  
+
+    <section class="title">
+        <img src="{{ url_for('static', filename='icon4.png') }}" alt="Logo">
+        <h1>Diseafy.io</h1>
+    </section>
+
+    <section class="selected-symp-box">
+        <ul id="selected">
+
+            <div id="noele">No symptoms selected</div>
+        </ul>
+
+        <button class="bubbly-button" id="submit">Predict</button>
+    </section>
+
+    <div class="blurred-background"></div>
+
+    <section class="output" >
+        <!-- <h2>You may have</h2>
+        <h1 id="op">{{ result }}</h1>
+        <h1 id="op">(vertigo) Paroymsal  Positional Vertigo</h1> -->
+        <!-- <h1 id="op">Jaundice</h1>
+        <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis tempore perferendis praesentium magni accusantium nulla quam error, laudantium, vero delectus perspiciatis tenetur vitae mollitia vel sapiente laborum atque ad? Nesciunt non ad facilis harum, sed ratione perspiciatis fugit accusamus maiores, cupiditate culpa incidunt nobis amet? Incidunt atque sit sequi consequatur eum expedita, provident inventore, illum, rem et aliquid fugit quo?</h5> -->
+
+        <h2 id="you">{{ you }}</h2>
+        <!-- <h1 id="op">{{ result }}</h1>
+        <h5 id="det">{{ details }}</h5> -->
+
+        <div class="dis_container">
+
+            <div class="dis_box" id="dis1">
+                <div class="op_perc">
+                    <h1 class="op"></h1>
+                    <h5 class="perc"></h5>
+                </div>
+                <h4 class="det"></h4>
+            </div>
+            <div class="dis_box" id="dis2">
+                <div class="op_perc">
+                    <h1 class="op"></h1>
+                    <h5 class="perc"></h5>
+                </div>
+                <h4 class="det"></h4>
+            </div>
+            <div class="dis_box" id="dis3">
+                <div class="op_perc">
+                    <h1 class="op"></h1>
+                    <h5 class="perc"></h5>
+                </div>
+                <h4 class="det"></h4>
+            </div>
+            <div class="dis_box" id="dis4">
+                <div class="op_perc">
+                    <h1 class="op"></h1>
+                    <h5 class="perc"></h5>
+                </div>
+                <h4 class="det"></h4>
+            </div>
+            <div class="dis_box" id="dis5">
+                <div class="op_perc">
+                    <h1 class="op"></h1>
+                    <h5 class="perc"></h5>
+                </div>
+                <h4 class="det"></h4>
+            </div>
+        </div>
+
+
+    </section>
+
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){
+            loader.style.display ="none";
+        })
+    </script>
+
+    <!-- <script src="particles.js"></script> 
+    <script src="app.js"></script> -->
+
+    <script src="{{ url_for('static', filename='particles.js') }}"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</div>
+</body>
+</html>
