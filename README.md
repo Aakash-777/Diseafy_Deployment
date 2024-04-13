@@ -9,7 +9,13 @@
 8) Goto that link and boom , the App is live<br><br>
 
 
-Note:- Tried to deploy it on Vercel , but it said file sizes exceeded 300MB
+Note:- Tried to deploy it on Vercel , but it said file sizes exceeded 300MB<br><br>
+
+![image](https://github.com/Aakash-777/Diseafy/assets/108759537/cb6b93b8-8e01-4ed7-b68b-0cce361d8fd1)
+
+![image](https://github.com/Aakash-777/Diseafy/assets/108759537/6ce3e1aa-caf2-4081-9105-7735429c9d3e)
+
+
 
 
 
