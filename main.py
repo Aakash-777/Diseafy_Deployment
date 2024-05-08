@@ -14,9 +14,9 @@ from keras.models import Sequential, load_model
 
 app = Flask(__name__)
 
-lm = load_model(r'C:\Users\Aakash\Documents\codes\EPICS_DNN\epics_model_vsc.h5')
+lm = load_model(r'Diseafy-main\Diseafy-main\epics_model_vsc.h5')
 
-with open(r'C:\Users\Aakash\Documents\codes\EPICS\disease_data.json', 'r') as file:
+with open(r'Diseafy-main\Diseafy-main\disease_data.json', 'r') as file:
     disease_data = json.load(file)
 
 
